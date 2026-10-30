@@ -1,33 +1,31 @@
-import { site, products, leadMagnet } from '../config.js';
+import { site, products } from '../config.js';
 
 export default function Hero() {
   const bundle = products.find((p) => p.featured) || products[0];
+
   return (
     <section className="hero" id="top">
       <div className="wrap hero-grid">
         <div className="hero-copy">
           <p className="eyebrow">Money · Marketing · Sales</p>
           <h1>
-            Welcome. Let&apos;s turn what you know into <em>income you can count on.</em>
+            Turn what you know into <em>income you can count on.</em>
           </h1>
           <p className="lead">
-            Practical, no-jargon frameworks for creators and small business owners. Start free, then pick the
-            tool that fits where you are right now.
+            Practical, no-jargon frameworks for creators and small business owners. Start free, or grab the core toolkit.
           </p>
           <div className="cta-row">
-            <a href="#shop" className="btn btn-primary">
-              Shop the {bundle.name} · {site.symbol}
-              {bundle.price}
+            <a href="#shop" className="btn btn-gold">
+              Shop {bundle.name} · {site.symbol}{bundle.price}
             </a>
             <a href="#free" className="btn btn-ghost-light">
-              Or start free →
+              Start free &rarr;
             </a>
           </div>
-          <ul className="trust">
-            <li>Instant download</li>
-            <li>Secure checkout</li>
-            {site.guarantee && <li>{site.guarantee}</li>}
-          </ul>
+          <div className="hero-micro-trust">
+            <span className="stars">★★★★★</span>
+            <span>Trusted by 1,000+ creators &amp; founders</span>
+          </div>
         </div>
         <div className="hero-photo">
           <img
@@ -38,10 +36,6 @@ export default function Hero() {
             fetchPriority="high"
             decoding="async"
           />
-          <a href="#free" className="float-badge">
-            <span>Free</span>
-            {leadMagnet.title}
-          </a>
         </div>
       </div>
     </section>
